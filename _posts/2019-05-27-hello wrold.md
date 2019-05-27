@@ -7,3 +7,5 @@ excerpt: test
 ---
 
 hello World!
+
+![图片测试](/imgs/logo/png)
