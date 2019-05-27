@@ -1,8 +1,8 @@
 ---
 title: 博客总纲
 layout: post
-categories: 系统
-tags: 笔记
+categories: 记事
+tags: 总纲 分类
 excerpt: 博客总纲
 ---
 
