@@ -6,3 +6,5 @@
 _site
 Gemfile
 Gemfile.lock
+*.xml
+.idea
