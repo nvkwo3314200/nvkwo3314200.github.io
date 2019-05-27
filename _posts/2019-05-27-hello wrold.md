@@ -6,6 +6,6 @@ tags: java
 excerpt: test
 ---
 
-hello World!
+### hello World!
 
-![图片测试](/imgs/logo/png)
+![图片测试](/assets/imgs/logo.png)
