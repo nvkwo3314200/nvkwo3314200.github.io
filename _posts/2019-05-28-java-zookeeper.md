@@ -29,3 +29,6 @@ excerpt: Zookeeper 学习资源汇总
 
 ### 学习总结
 
+1. 在分布式系统，易出现资源竞争和资源管理不善的情况。zookeeper服务可以用来协调这些问题
+2. ZooKeeper是一个经典的分布式数据一致性解决方案，致力于为分布式应用提供一个高性能、高可用，且具有严格顺序访问控制能力的分布式协调服务。 
+3. [zookeeper工作原理](https://www.cnblogs.com/felixzh/p/5869212.html)
