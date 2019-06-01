@@ -8,6 +8,8 @@ excerpt: Dubbo 学习资源汇总
 
 ### Dubbo学习小结
 
+[dubbo 是什么，怎么用](https://blog.csdn.net/houshaolin/article/details/76408399)
+
 ### 什么是dubbo
 
 
