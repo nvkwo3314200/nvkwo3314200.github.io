@@ -86,6 +86,7 @@ excerpt: 总结idea快捷键相关
 - CTRL＋SHIFT＋BACKSPACE          可以跳转到上次编辑的地 
 - ALT+6                          查找TODO 
 
+
 #### 其他快捷键
 - SHIFT+ENTER                   另起一行 
 - CTRL+Z                        倒退(撤销) 
@@ -96,6 +97,8 @@ excerpt: 总结idea快捷键相关
 - CTRL+F4                       关闭当前窗口 
 - CTRL+ALT+V，                  可以引入变量。例如：New String(); 自动导入变量定义 
 - CTRL+~                        快速切换方案（界面外观、代码风格、快捷键映射等菜单） 
+- Ctrl+"+/-"                  当前方法展开、折叠
+- Ctrl+Shift+"+/-"              全部展开、折叠
 
 #### SVN快捷键
 
