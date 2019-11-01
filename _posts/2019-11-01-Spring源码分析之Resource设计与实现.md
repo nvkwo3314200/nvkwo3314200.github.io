@@ -1,5 +1,5 @@
 ---
-title: Spring源码分析之Resource设计与实现
+title: Spring Resource设计与实现
 layout: post
 categories: Spring源码分析
 tags: Spring源码分析 Resource设计与实现
