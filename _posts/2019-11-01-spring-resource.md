@@ -7,7 +7,7 @@ excerpt:  最近开始写关于Spring源码分析的相关内容， Spring是一
 ---
 
 ### 写在前面
-几乎所有的项目都会，用到关于配置文件的解读，Spring 框架也是。现在就一起在解读Spring中是怎么设计并实现，多样化的资源文件的操作的。
+几乎所有的项目都会用到关于配置文件的解读，Spring框架也是。现在就一起在解读Spring中是怎么设计并实现，多样化的资源文件的操作的。
 
 
 原文出处：https://blog.csdn.net/fyzlucky2015/article/details/77943994
