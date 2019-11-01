@@ -15,7 +15,7 @@ excerpt:  最近开始写关于Spring源码分析的相关内容， Spring是一
 ### 分析Spring的资源抽象设计和实现
 
 Spring把其资源做了一个抽象，底层使用统一的资源访问接口来访问Spring的所有资源。也就是说，不管什么格式的文件，也不管文件在哪里，到Spring 底层，都只有一个访问接口，Resource。整个Spring的资源定义在spring-core 的包中。我们先来看Resource整个的类图：
-![Srping Resource 类图](/assets/imgs/20191111SpringResourceClassPic.png)
+![Srping Resource 类图](/assets/imgs/20191111SpringResourceClassPic.jpg)
 
 Resource的抽象比较简单，由几个重要的接口和相关抽象类及其实现的类组成。
 
@@ -697,7 +697,7 @@ public InputStream getInputStream() throws IOException
 }
 ```
 
-五、总结
+### 五、总结
 
 Spring框架中对资源的设计和实现，大致就是这样了，从设计到实现上并不复杂。关键的是要善于使用抽象。不得不说，Spring框架的Resource工具是十分强大的，整个实现都在spring-code 包中，以后如果要读取文件，就可以直接使用该包了。当然，资源访问只是Spring的一小部分，资源访问的应用是在应用程序上下文ApplicationContext中调用ResourceLoad进行资源的加载。这里等后面分析ApplicationContext的初始化过程的时候再来具体分析。
 
