@@ -25,11 +25,11 @@ Resource的抽象比较简单，由几个重要的接口和相关抽象类及其
 #### 1、重要接口 Resource和InputStreamSource
 Resource接口，是整个Spring框架对资源的抽象访问接口。它继承于InputStreamSource接口。Spring把资源抽象了，那么到底抽象成什么了呢？看代码一目了然，所有资源高度抽象为二进制流，也就是不管你资源文件是什么格式，也不管你资源在哪里，Spring底层访问的都是文件的二进制流，这样就可以统一访问了。因此，Resource并不是资源的根接口，根接口是 InputStreamSource
 该接口非常简单，只有一个方法  ：获取资源的二进制流对象，所有的不同的资源类型都要去实现该接口
-```java_holder_method_tree
+```java
     InputStream getInputStream() throws IOException;
 ```
 Resource接口，继承了InputStreamSource，拥有的方法如下,这些方法就构成了Spring对资源的访问能力
-```java_holder_method_tree
+```java
     public interface Resource extends InputStreamSource
     {
        /**
@@ -108,7 +108,7 @@ Resource接口，继承了InputStreamSource，拥有的方法如下,这些方法
 #### 2、WritableResource和ContextResource
 
 Resource接口定义了资源的可访问等一系列的操作，但有些资源需要可写入的，如文件对象，因此还定义了WritableResource接口，继承了Resource接口，表示资源具有可写入的能力。WritableResource接口拥有三个方法，如下：
-```java_holder_method_tree
+```java
 /**
  * Spring资源的扩展接口，该接口支持Spring资源的可写入
  */
@@ -135,7 +135,7 @@ public interface WritableResource extends Resource
 }
 ```
 ContextResource 接口也继承了Resource接口，表示可以从关闭的上下文Context中获取资源的路径，这样应用程序上下文也就有了返回上下文路径的能力。
-```java_holder_method_tree
+```java
 
 /**
  * Spring的资源扩展接口，支持从关闭的上下文中获取资源的路径
@@ -157,7 +157,7 @@ Spring资源的访问接口，介绍完了，下面看看 Resource的抽象实�
 
 AbstractResource 是个抽象类，Resource接口的大部分方法的默认实现。具体分析看代码洛：
 
-```java_holder_method_tree
+```java
 /**
  * Spring资源的抽象实现类。
  * 该抽象类实现了大部分的资源操作
@@ -382,7 +382,7 @@ DescriptiveResource 代表资源描述的资源，可以理解为资源的元数
 代表文件系统资源，以操作系统文件路径的方式访问，继承了 AbstractResource抽象类，并实现了 资源可写入接口 WritableResource 
 
 内部实现中，以 文件对象File和文件路径字符串 path  组成。也就是通过文件路径，转换为文件对象File，是java.io.File 的一个封装。实现了 资源的根接口，获取了文件的 输入流：
-```java_holder_method_tree
+```java
 /**
  * 实现 InputStreamSource 接口
  * @see java.io.FileInputStream
@@ -437,7 +437,7 @@ ClassPathResource、UrlResource、ServletContextResource
 ##### ①、ClassPathResource
 
 ClassPathResource这个资源类表示的是类路径下的资源，资源以相对于类路径的方式表示。这个资源类有3个成员变量，分别是一个不可变的相对路径、一个类加载器、一个类对象。这个资源类可以相对于应用程序下的某个类或者相对于整个应用程序，但只能是其中之一，取决于构造方法有没有传入Class参数。是一个常用的资源对象。他有4个构造函数：
-```java_holder_method_tree
+```java
 /**
  * 初始化，以类的路径作为参数
  */
@@ -479,7 +479,7 @@ protected ClassPathResource(String path, @Nullable ClassLoader classLoader, @Nul
 }
 ```
 重要方法：
-```java_holder_method_tree
+```java
 /**
  * 获取类路径下的资源的二进制流
  */
@@ -531,7 +531,7 @@ public String getDescription()
 UrlResource这个资源类封装了可以以URL表示的各种资源。它有3个属性，URI、URL，以及规范化后的URL，用于资源间的比较以及计算HashCode。他是对java.net.URL的封装。
 
 对比一下其构造函数：
-```java_holder_method_tree
+```java
 /**
  * 原始的URI，如果可用，使用URI和文件访问
  */
@@ -605,7 +605,7 @@ public UrlResource(String protocol, String location, @Nullable String fragment) 
 }
 ```
 再看看，获取输入流的方法：
-```java_holder_method_tree
+```java
 /**
  * 获取URL的二进制输入流
  */
@@ -639,7 +639,7 @@ Web容器上下文的资源，相对于Web应用程序根目录的路径加载�
 该类在实现方式上，内部使用不可变的ServetContext 对象和一个String类型的路径对象。类中所有的操作都是基于该对象。
 
 核心方法：
-```java_holder_method_tree
+```java
 /**
  * 获取web应用程序上下文的资源二进制流
  */
@@ -657,7 +657,7 @@ public InputStream getInputStream() throws IOException {
 ### 四、资源中最后一个类EncodedResource
 
 EncodedResource类是辅助类，从名字上可以看出，它是一个编码类。资源加载的时候，是采用操作系统默认的编码方式，为解决编码不统一的问题，Spring的IOC获取资源后，需要把资源重新编码一下。例如，在Spring应用程序上下文的 XmlBeanDefinitionReader 类中，获取了 资源后，需要对资源进一步解析，在解析之前，调用 new EncodedResource();解析资源重新编码：
-```java_holder_method_tree
+```java
 /**
  * 读取Resource解析
  */
