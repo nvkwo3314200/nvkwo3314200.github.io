@@ -5,6 +5,9 @@ categories: linux tree 命令学习
 tags: linux tree 
 excerpt:  linux tree 命令学习
 ---
+
+tree 命令，可以帮忙文件系统快速生成树形结构，并通过参数满足不同的需求
+
 ```
 usage: tree [-acdfghilnpqrstuvxACDFJQNSUX] [-H baseHREF] [-T title ]
 	[-L level [-R]] [-P pattern] [-I pattern] [-o filename] [--version]
