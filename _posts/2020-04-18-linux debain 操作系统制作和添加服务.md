@@ -14,13 +14,13 @@ excerpt:  纯手工制作和添加服务
 ```shell
 #!/bin/sh
 ### BEGIN INIT INFO
-# Provides:          app_run
+# Provides:          frpc
 # Required-Start:    $local_fs $remote_fs $network $syslog $named  #此处为依赖服务，即该服务脚本会在这些服务启动后运行
 # Required-Stop:     $local_fs $remote_fs $network $syslog $named
 # Default-Start:     2 3 4 5
 # Default-Stop:      0 1 6
-# Short-Description: app_run service
-# Description:       Start the app_run service and associated helpers
+# Short-Description: frpc service
+# Description:       Start the frpc service and associated helpers
 ### END INIT INFO
 do_start()
 {
