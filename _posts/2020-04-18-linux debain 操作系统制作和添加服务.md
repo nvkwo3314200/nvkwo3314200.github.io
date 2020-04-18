@@ -96,6 +96,13 @@ sudo service frpc stop
     sudo apt-get install dos2unix
     dos2unix frpc
 ```
+3. 方法三： windows 修改sublime text3配置
+Preferences --> Settings, 加入下面的配置
+```
+    "default_encoding": "UTF-8",
+    "enable_hexadecimal_encoding": true,
+    "default_line_ending": "unix",
+```
 
 ### 添加开机启动
 update-rc.d 是用管理服务的，具体用法有很多，这里不详细记录。只用最简单的用法
