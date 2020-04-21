@@ -25,9 +25,9 @@ excerpt:
     --enable-strip \
     --disable-cli
 ```
-4.下载x264源码并编译安装
+4.下载x264源码并编译安装(https://www.videolan.org/developers/x264.html)
 ```shell
-    git clone git://git.videolan.org/x264.git
+    git clone https://code.videolan.org/videolan/x264.git
     cd x264
     mv ../config_x264_rpi.sh ./
     chmod +x config_x264_rpi.sh
