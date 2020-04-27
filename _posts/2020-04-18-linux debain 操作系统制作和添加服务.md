@@ -22,14 +22,26 @@ excerpt:  纯手工制作和添加服务
 # Short-Description: frpc service
 # Description:       Start the frpc service and associated helpers
 ### END INIT INFO
+
+abs_root=/usr/local/frp_0.32.1_linux_arm
+cmd_name=frpc
+conf_name=frpc.ini
+abc_cmd=$abs_root/$cmd_name
+abs_conf=$abs_root/$conf_name
+
 do_start()
 {
-    nohup /usr/local/frp_0.32.1_linux_arm/frpc -c /usr/local/frp_0.32.1_linux_arm/frpc.ini 2>&1 &  #这里是你要在服务启动时执行的动作
+    if ps -ef | grep $abc_cmd | egrep -v grep >/dev/null
+    then
+      echo 'frpc service already start, if you want restart. please run "service frpc restart"'
+    else  
+      nohup $abc_cmd -c $abs_conf 2>&1 &  #这里是你要在服务启动时执行的动作
+    fi
 }
  
 do_stop()
 {
-    pkill -f /usr/local/frp_0.32.1_linux_arm/frpc   #这里是你要在关闭服务时执行的动作
+    pkill -f $abc_cmd   #这里是你要在关闭服务时执行的动作
 }
 
 #
